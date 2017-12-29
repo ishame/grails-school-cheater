@@ -1,0 +1,21 @@
+// 全体的なもの
+// 左右マージン
+$sidemargin: 15px;
+
+// bodyの色
+$body-bgcolor: #f6f6f6;
+$body-textcolor: #444;
+
+// ヘッダ
+$header-bgcolor: rgba(103, 146, 226, .9);
+$header-textcolor: #f6f6f6;
+$brand-bgcolor: rgb(72, 130, 250);
+
+// ページタイトル
+$pagetitle-bordercolor: #bbb;
+
+// フッタ
+$footer-bgcolor: darken($header-bgcolor, 10%);
+
+// ログインフォームの幅
+$login-form-width: 380px;

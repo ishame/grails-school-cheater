@@ -1,0 +1,195 @@
+/* body関連 */
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  font-family: Avenir, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Verdana, Roboto, '游ゴシック', 'Yu Gothic', '游ゴシック体', 'YuGothic', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Meiryo UI', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  background-color: $body-bgcolor;
+  color: $body-textcolor;
+  line-height: 1.8;
+  padding-left: $sidemargin;
+  padding-right: $sidemargin;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 汎用クラス */
+.margin-top-md {
+  margin-top: 1rem;
+}
+.margin-top-lg {
+  margin-top: 2rem;
+}
+
+.margin-right-md {
+  margin-right: 1rem;
+}
+
+/* レイアウト */
+.wrap {
+  padding-top: calc(50px + 1rem);
+  flex: 1 0 auto;
+}
+.content {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+/* ヘッダ関連 */
+.navbar {
+  padding-right: $sidemargin;
+  margin-bottom: 0;
+  .btn:hover {
+    color: $header-bgcolor;
+    background-color: #FFF !important;
+  }
+  color: $header-textcolor;
+}
+.navbar-inverse {
+  background-color: $header-bgcolor;
+  border-bottom: none;
+  box-shadow: 0 0 3px rgba(0,0,0, .6);
+  .navbar-brand {
+    background-color: rgba(72, 130, 250, .7);
+    color: $header-textcolor;
+    padding-left: $sidemargin * 2;
+    padding-right: $sidemargin * 2;
+  }
+}
+.header__menu a {
+  margin-left: .5rem;
+}
+.header__user-name {
+  font-size: 16px;
+  padding: 0 10px 0 0;
+  .fa {
+    margin: 0 3px 0 0;
+    vertical-align: middle;
+  }
+}
+.navbar-form {
+  float: right !important;
+  margin-right: -15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  border-top: none;
+  box-shadow: none;
+}
+
+/* タイトル */
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dotted $pagetitle-bordercolor;
+  display: flex;
+  align-items: center;
+  .btn {
+    margin-left: auto;
+    margin-bottom: .2rem;
+  }
+}
+
+/* コンテンツ */
+.pjinfo {
+  margin-bottom: 0;
+  dt {
+    width : 6rem;
+    float : left;
+    clear : both;
+    margin-bottom: .5rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  dd{
+    padding-left : 10px;
+    width : auto;
+    margin-left : 6rem;
+    margin-bottom: .5rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.tab-content {
+  background-color: #fff;
+  padding: 15px;
+}
+.tab-content__extra {
+  margin-top: 1rem;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding : 15px 15px 0 15px;
+  border-top: 1px solid rgba(0,0,0,.05);
+  a:first-of-type {
+    margin-right: 1rem;
+  }
+}
+
+.nav-tabs > li.active > a {
+  pointer-events: none;
+}
+
+.form-message {
+  color: #666;
+}
+
+/* テーブル */
+.table {
+  margin-bottom: 0;
+}
+
+/* フッタ */
+footer {
+  flex-shrink: 0;
+}
+
+footer.navbar {
+  margin-top: 2rem;
+  margin-left: -1 * $sidemargin;
+  margin-right: -1 * $sidemargin;
+  background-color: $footer-bgcolor;
+  display: flex;
+  align-items: center;
+  .container-fluid {
+    width: 100%;
+  }
+  border-bottom: none;
+}
+
+/* ページネーション */
+.pagination {
+  :first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  :last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .prevLink, .nextLink, .step, .currentStep {
+    padding: 6px 12px;
+    margin-left: -1px;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .currentStep {
+    color: #fff;
+    background-color: #3ac0ff;
+    border-color: #3ac0ff;
+  }
+
+  .currentStep + a {
+    border-left-color: #3ac0ff;
+  }
+}
