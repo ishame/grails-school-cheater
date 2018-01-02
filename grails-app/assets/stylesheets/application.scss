@@ -7,11 +7,15 @@
 * You're free to add application-wide styles to this file and they'll appear at the top of the
 * compiled file, but it's generally better to create a new file per style scope.
 *
-*= require smt-bootstrap
 *= require_self
 */
 
-@import "main_variable";
-@import "main_global";
-@import "main_error";
-@import "main_login";
+// Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+
+@import "app_base";
+@import "app_global";
+@import "app_top_navigation";
+@import "app_sidebar";
+@import "app_navigation";
+@import "app_content";

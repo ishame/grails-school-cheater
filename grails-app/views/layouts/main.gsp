@@ -16,15 +16,26 @@
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-        <g:link uri="/" class="navbar-brand"><g:message code="app.name"/></g:link>
+        <div class="navbar-header">
+            <g:link uri="/" class="navbar-brand">
+                <g:img dir="images" file="logo.png" width="40" height="40"/>
+            </g:link>
+        </div>
         <sec:ifLoggedIn>
-            <div class="nav navbar-form navbar-right header__menu">
-                <span class="header__user-name"><span class="fa fa-user"></span>&nbsp;<sec:loggedInUserInfo field="username"/></span>
-                <g:form controller="logout" class="logout-form">
-                    <button type="submit" class="btn btn-inverted-white btn-default logout-button">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><g:link controller="profile"><span class="fa fa-user"></span>&nbsp;
+                        <sec:loggedInUserInfo field="username"/></g:link></li>
+                    <sec:ifAllGranted roles="ROLE_ADMIN">
+                        <li><g:link uri="/dashboard">
+                            <g:message code="dashboard.label"/>
+                        </g:link></li>
+                    </sec:ifAllGranted>
+                    <li><g:link uri="/logoff" class="btn btn-inverted-white btn-default logout-button">
                         <g:message code="springSecurity.logout.button"/>
-                    </button>
-                </g:form>
+                    </g:link>
+                    </li>
+                </ul>
             </div>
         </sec:ifLoggedIn>
     </div>

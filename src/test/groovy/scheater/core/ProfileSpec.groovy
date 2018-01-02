@@ -1,9 +1,9 @@
-package scheater
+package scheater.core
 
-import grails.testing.web.controllers.ControllerUnitTest
+import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class PortalControllerSpec extends Specification implements ControllerUnitTest<PortalController> {
+class ProfileSpec extends Specification implements DomainUnitTest<Profile> {
 
     def setup() {
     }
