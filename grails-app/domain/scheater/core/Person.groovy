@@ -1,11 +1,9 @@
 package scheater.core
 
-import grails.compiler.GrailsCompileStatic
 import grails.plugin.springsecurity.SpringSecurityService
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 
-@GrailsCompileStatic
 @EqualsAndHashCode(includes = 'username')
 @ToString(includes = 'username', includeNames = true, includePackage = false)
 class Person implements Serializable {
@@ -16,6 +14,7 @@ class Person implements Serializable {
 
     String username
     String password
+    String passwordCheck
     Date dateCreated
 
     boolean enabled = true
@@ -25,6 +24,10 @@ class Person implements Serializable {
 
     Set<Authority> getAuthorities() {
         (PersonAuthority.findAllByPerson(this) as List<PersonAuthority>)*.authority as Set<Authority>
+    }
+
+    def afterLoad() {
+        passwordCheck = password
     }
 
     def beforeInsert() {
@@ -39,15 +42,22 @@ class Person implements Serializable {
 
     protected void encodePassword() {
         password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
+        passwordCheck = password
     }
 
-    static hasMany = [profiles: Profile]
+    static hasOne = [profile: Profile]
 
-    static transients = ['springSecurityService']
+    static hasMany = [authorities: Authority]
+
+    static transients = ['springSecurityService', 'passwordCheck']
 
     static constraints = {
         username blank: false, size: 2..20, matches: /[0-9a-z_-]+/, unique: true
-        password nullable: false, blank: false, size: 4..60, password: true
+        password nullable: false, blank: false, size: 4..60, password: true, validator: { String val, Person self ->
+            val == self.passwordCheck
+        }
+        passwordCheck bindable: true
+        profile nullable: true
     }
 
     static mapping = {

@@ -34,3 +34,10 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
 root(ERROR, ['STDOUT'])
+//// log security information at the “info” level
+//logger 'grails.plugin.springsecurity.web.filter.DebugFilter', INFO, ['STDOUT'], false
+//logger 'org.springframework.security', DEBUG, ['STDOUT'], false
+//logger 'grails.plugin.springsecurity', DEBUG, ['STDOUT'], false
+//// log hibernate SQL
+//logger 'org.hibernate.type.descriptor.sql.BasicBinder', TRACE, ['STDOUT']
+//logger 'org.hibernate.SQL', TRACE, ['STDOUT']

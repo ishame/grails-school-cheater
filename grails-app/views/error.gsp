@@ -5,7 +5,9 @@
         <title>
             <g:message code="app.title" args="[HttpStatus.INTERNAL_SERVER_ERROR.reasonPhrase]"/>
         </title>
-        <meta name="layout" content="main">
+        <sec:ifAllGranted roles="ROLE_ADMIN">
+            <meta name="layout" content="application">
+        </sec:ifAllGranted>
     </head>
 
     <body>

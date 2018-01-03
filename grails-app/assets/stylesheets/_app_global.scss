@@ -14,3 +14,21 @@
   padding: 1rem 1rem .8rem;
   text-transform: uppercase;
 }
+
+.person__box {
+  background-color: #ffffff;
+  border: 0.2rem solid #e7eaec;
+  padding: 2rem;
+  min-height: 15rem;
+}
+
+.person-box__footer {
+  position: relative;
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom: 0.2rem solid #e7eaec;
+  border-right: 0.2rem solid #e7eaec;
+  border-left: 0.2rem solid #e7eaec;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}

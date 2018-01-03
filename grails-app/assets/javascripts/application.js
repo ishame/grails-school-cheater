@@ -6,3 +6,14 @@
 // to create separate JavaScript files as needed.
 //
 //= require_self
+
+$(function () {
+    (function () {
+        var config = {
+            '.chosen-authority'           : { disable_search_threshold: 10 },
+        }
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        }
+    })();
+});

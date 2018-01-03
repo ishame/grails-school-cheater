@@ -8,7 +8,7 @@ class Profile {
     String address
     Date lastUpdated
 
-    static belongsTo = [person: Person]
+    Person person
 
     static constraints = {
         name blank: false, size: 2..20, matches: /[A-Za-z ]+/

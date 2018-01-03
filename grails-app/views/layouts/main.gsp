@@ -28,7 +28,7 @@
                         <sec:loggedInUserInfo field="username"/></g:link></li>
                     <sec:ifAllGranted roles="ROLE_ADMIN">
                         <li><g:link uri="/dashboard">
-                            <g:message code="dashboard.label"/>
+                            <g:message code="appli.label"/>
                         </g:link></li>
                     </sec:ifAllGranted>
                     <li><g:link uri="/logoff" class="btn btn-inverted-white btn-default logout-button">
